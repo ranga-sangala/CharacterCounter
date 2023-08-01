@@ -1,4 +1,4 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import {v4 as uuidv4} from 'uuid'
 import CharDisplay from './CharDisplay'
 
@@ -6,7 +6,9 @@ const CharInput = () => {
   const [input, setInput] = useState('')
   const [words, setWords] = useState([])
 
-  const onClickAddBtn = () => {
+  useEffect(() => {}, [input])
+  const onClickAddBtn = event => {
+    event.preventDefault()
     setWords([...words, input])
     setInput('')
   }
@@ -16,7 +18,11 @@ const CharInput = () => {
       <div className="input-container">
         <h1 className="heading">Character Counter</h1>
         <div>
-          <form>
+          <form
+            onSubmit={event => {
+              onClickAddBtn(event)
+            }}
+          >
             <input
               className="input-element"
               type="text"
@@ -26,13 +32,7 @@ const CharInput = () => {
                 setInput(event.target.value)
               }}
             />
-            <button
-              className="add-btn"
-              type="submit"
-              onClick={() => {
-                onClickAddBtn()
-              }}
-            >
+            <button className="add-btn" type="submit">
               Add
             </button>
           </form>

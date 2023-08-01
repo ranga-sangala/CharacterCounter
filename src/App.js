@@ -1,6 +1,5 @@
 import {useState} from 'react'
 import CharInput from './components/CharInput'
-import CharDisplay from './components/CharDisplay'
 
 import './App.css'
 
@@ -10,7 +9,6 @@ const App = () => {
 
   return (
     <>
-      <CharDisplay />
       <CharInput />
       {count}
     </>

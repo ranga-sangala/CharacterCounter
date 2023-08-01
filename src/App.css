@@ -14,7 +14,7 @@ body {
 .main-container {
   display: flex;
   flex-direction: row-reverse;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin: 50px;
   padding: 50px;
@@ -70,6 +70,7 @@ body {
 }
 .word {
   padding: 5px;
+  align-self: flex-start;
 }
 
 .empty-view {
