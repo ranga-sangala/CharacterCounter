@@ -1,5 +1,6 @@
 const CharDisplay = props => {
   const {word, length} = props
+
   return (
     <div>
       <li className="word">
